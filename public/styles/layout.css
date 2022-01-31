@@ -25,3 +25,20 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   display: flex;
+   height: 100%;
+   width: 90%;
+   margin-left: 5%;
+   background-color: #f4f1ec;
+   position: absolute;
+   z-index: 0;
+ }
+
+ .container {
+  flex-direction: column;
+  padding-top: 500px;
+  justify-content: flex-start;
+  text-align: center;
+ }
