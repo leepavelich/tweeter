@@ -22,7 +22,7 @@ nav {
   justify-content: space-around;
 }
 
-.new-tweet {
+.new-tweet-nav {
   display: flex;
   flex-direction: column;
   gap: 0.1em;
