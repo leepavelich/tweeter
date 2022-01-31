@@ -25,11 +25,22 @@ nav {
 .new-tweet-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.1em;
-  padding-bottom: 0.25em;
+  gap: 0.25em;
+  padding-bottom: 0.1em;
   align-items: center;
 }
 
 .new-tweet-icon {
   color: red;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0); color: red}
+  50% {transform: translateY(-10px); color: orangered}
+  100% {transform: translateY(0); color: darkorange}
 }
