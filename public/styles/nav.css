@@ -7,7 +7,6 @@ nav {
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  padding-bottom: 1em;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
@@ -18,13 +17,16 @@ nav {
 
 .logo {
   font-family: 'Bungee', cursive;
-  font-size: 36px;
+  font-size: 42px;
+  padding-bottom: 0.5em;
   justify-content: space-around;
 }
 
 .new-tweet {
   display: flex;
   flex-direction: column;
+  gap: 0.1em;
+  padding-bottom: 0.25em;
   align-items: center;
 }
 
