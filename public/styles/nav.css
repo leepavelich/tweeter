@@ -21,4 +21,11 @@ nav {
 }
 
 .new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-tweet-icon {
+  color: red;
 }
