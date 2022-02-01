@@ -72,3 +72,7 @@ article.tweet footer .icons span {
 article.tweet footer .icons span:hover {
   color: #c3c360;
 }
+
+article.tweet + article.tweet {
+  margin-top: 1em;
+}
