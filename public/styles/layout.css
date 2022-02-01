@@ -42,3 +42,7 @@ body {
   justify-content: flex-start;
   text-align: center;
  }
+
+ section + article {
+   margin-top: 2em;
+ }

@@ -1,0 +1,51 @@
+article {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+  margin: 0;
+  width: 80%;
+  margin-left: 10%;
+  border-style: solid;
+}
+
+article header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+article header .avatar {
+  width: 30px;
+  margin-right: 0.5em;
+}
+
+article header .name {
+  flex-grow: 0;
+}
+
+article header .handle {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  color: #d0d0e4;
+}
+
+article .tweet-content {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 5px solid #545149;
+  margin-bottom: 10px;
+}
+
+article footer {
+  display: flex;
+  flex-direction: row;
+  font-size: 60%;
+}
+
+article footer .icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}

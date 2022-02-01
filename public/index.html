@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"  />
     <link rel="stylesheet" href="/styles/header.css" type="text/css"  />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"  />
+    <link rel="stylesheet" href="/styles/tweet-layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -43,7 +44,7 @@
       </div>
     </nav>
     <!--- Header --->
-    <header>
+    <header class="page-header">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -68,6 +69,21 @@
           </div>
         </form>
       </section>
+
+      <article class="tweet">
+        <header>
+          <image class="avatar" src="/images/girl.png"></image>
+          <div class="name">Rhoda Jacobs</div>
+          <div class="handle">@MrsJacobs</div>
+        </header>
+        <div class="tweet-content">
+          <p>Something to tweet here</p>
+        </div>
+        <footer>
+          <div class="days-ago">10 days ago</div>
+          <div class="icons">icons</div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
