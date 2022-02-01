@@ -43,6 +43,6 @@ body {
   text-align: center;
  }
 
- section + article {
+ section + article.tweet {
    margin-top: 2em;
  }

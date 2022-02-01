@@ -1,51 +1,74 @@
-article {
+article.tweet {
   display:flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5em;
+  padding: 0.7em;
   margin: 0;
   width: 80%;
   margin-left: 10%;
   border-style: solid;
 }
 
-article header {
+article.tweet:hover {
+  box-shadow: 5px 5px #c8c8e1;
+}
+
+article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
-article header .avatar {
+article.tweet header .avatar {
   width: 30px;
   margin-right: 0.5em;
 }
 
-article header .name {
+article.tweet header .name {
   flex-grow: 0;
 }
 
-article header .handle {
+article.tweet header .handle {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
-  color: #d0d0e4;
+  color: #babace;
 }
 
-article .tweet-content {
-  display: flex;
-  justify-content: flex-start;
+article.tweet .tweet-content {
   border-bottom: 5px solid #545149;
-  margin-bottom: 10px;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
-article footer {
+article.tweet .tweet-content-text {
+  text-align: left;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+article.tweet footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   font-size: 60%;
 }
 
-article footer .icons {
+article.tweet footer .days-ago {
+  padding-left: 1em;
+}
+
+article.tweet footer .icons {
   display: flex;
-  justify-content: flex-end;
-  flex-grow: 1;
+  padding-right: 1em;
+  color: #4b5499;
+}
+
+article.tweet footer .icons span {
+  width: 2em;
+}
+
+article.tweet footer .icons span:hover {
+  color: #c3c360;
 }
