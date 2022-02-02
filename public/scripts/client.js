@@ -32,7 +32,8 @@ const data = [
 
 $(() => {
   renderTweets(data);
-})
+  tweetSubmission();
+});
 
 const createTweetElement = (tweet) => {
   const user = tweet.user;
@@ -67,3 +68,11 @@ const renderTweets = (array) => {
     $('.tweets-container').prepend($tweet);
   });
 };
+
+const tweetSubmission = () => {
+  const $form = $('#new-tweet-form');
+  $form.submit((event) => {
+    event.preventDefault();
+    console.log('submitted');
+  })
+}
