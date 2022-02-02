@@ -43,6 +43,7 @@ article.tweet .tweet-content {
 }
 
 article.tweet .tweet-content-text {
+  word-wrap: break-word;
   text-align: left;
   margin-left: 0.5em;
   margin-right: 0.5em;
