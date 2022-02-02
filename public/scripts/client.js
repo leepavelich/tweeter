@@ -71,8 +71,10 @@ const renderTweets = (array) => {
 
 const tweetSubmission = () => {
   const $form = $('#new-tweet-form');
-  $form.submit((event) => {
+  $form.submit(function (event) {
     event.preventDefault();
-    console.log('submitted');
+    const serializedTweetData = $(this).serialize();
+
+    $.post('/tweets', serializedTweetData);
   })
 }
