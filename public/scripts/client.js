@@ -46,6 +46,17 @@ const tweetSubmission = () => {
   const $form = $('#new-tweet-form');
   $form.submit(function(event) {
     event.preventDefault();
+
+    if (validateEmpty()) {
+      alert('Please enter a tweet before submission');
+      return;
+    };
+
+    if (validateTooLong()) {
+      alert('Tweets can only be 140 characters or less');
+      return;
+    };
+
     const serializedTweetData = $(this).serialize();
 
     $.post('/tweets', serializedTweetData);
@@ -55,4 +66,14 @@ const tweetSubmission = () => {
 
 const loadTweets = () => {
   $.get('/tweets', renderTweets)
+};
+
+const validateEmpty = () => {
+  const $text = $('#tweet-text');
+  return $text.val() === ''
+};
+
+const validateTooLong = () => {
+  const $text = $('#tweet-text');
+  return $text.val().length > 140;
 };
