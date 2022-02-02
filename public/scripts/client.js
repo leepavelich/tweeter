@@ -12,6 +12,7 @@ const createTweetElement = (tweet) => {
   const user = tweet.user;
   const timeAgo = timeago.format(tweet.created_at);
 
+
   const $tweet = `
   <article class="tweet">
     <header>
@@ -63,14 +64,13 @@ const tweetSubmission = () => {
 
     const serializedTweetData = $(this).serialize();
 
-    $.post('/tweets', serializedTweetData);
-    loadTweets();
+    $.post('/tweets', serializedTweetData, () => loadTweets());
     $(this)[0].reset();
   });
 };
 
 const loadTweets = () => {
-  $.get('/tweets', renderTweets)
+  $.get('/tweets', renderTweets);
 };
 
 const validateEmpty = ($text) => $text.val() === '';
