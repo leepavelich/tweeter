@@ -49,13 +49,14 @@ const tweetSubmission = () => {
   const $form = $('#new-tweet-form');
   $form.submit(function(event) {
     event.preventDefault();
+    const $text = $('#tweet-text');
 
-    if (validateEmpty()) {
+    if (validateEmpty($text)) {
       alert('Please enter a tweet before submission');
       return;
     };
 
-    if (validateTooLong()) {
+    if (validateTooLong($text)) {
       alert('Tweets can only be 140 characters or less');
       return;
     };
@@ -72,12 +73,6 @@ const loadTweets = () => {
   $.get('/tweets', renderTweets)
 };
 
-const validateEmpty = () => {
-  const $text = $('#tweet-text');
-  return $text.val() === ''
-};
+const validateEmpty = ($text) => $text.val() === '';
 
-const validateTooLong = () => {
-  const $text = $('#tweet-text');
-  return $text.val().length > 140;
-};
+const validateTooLong = ($text) => $text.val().length > 140;
