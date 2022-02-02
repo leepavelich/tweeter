@@ -51,14 +51,15 @@ const tweetSubmission = () => {
   $form.submit(function(event) {
     event.preventDefault();
     const $text = $('#tweet-text');
+    clearErrorMsg();
 
     if (validateEmpty($text)) {
-      alert('Please enter a tweet before submission');
+      errorMsg('<span>&#9888;</span> Please enter a tweet before submitting');
       return;
     };
 
     if (validateTooLong($text)) {
-      alert('Tweets can only be 140 characters or less');
+      errorMsg('<span>&#9888;</span> Tweets can only be 140 characters or less');
       return;
     };
 
@@ -83,3 +84,15 @@ const escape = function (str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
+const errorMsg = (msg) => {
+  const $errorMsg = $(".validation-error-msg");
+
+  $errorMsg.hide()
+    .html(msg)
+    .slideDown('fast');
+}
+
+const clearErrorMsg = () => {
+  $(".validation-error-msg").slideUp('fast');
+}
