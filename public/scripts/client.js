@@ -28,7 +28,7 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 $(() => {
   renderTweets(data);
@@ -37,7 +37,7 @@ $(() => {
 
 const createTweetElement = (tweet) => {
   const user = tweet.user;
-  const timeAgo = timeago.format(tweet.created_at)
+  const timeAgo = timeago.format(tweet.created_at);
 
   const $tweet = `
   <article class="tweet">
@@ -71,10 +71,10 @@ const renderTweets = (array) => {
 
 const tweetSubmission = () => {
   const $form = $('#new-tweet-form');
-  $form.submit(function (event) {
+  $form.submit(function(event) {
     event.preventDefault();
     const serializedTweetData = $(this).serialize();
 
     $.post('/tweets', serializedTweetData);
-  })
-}
+  });
+};
