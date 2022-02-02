@@ -64,6 +64,6 @@ const createTweetElement = (tweet) => {
 const renderTweets = (array) => {
   array.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
-    $('.container').append($tweet);
+    $('.tweets-container').prepend($tweet);
   });
 };
