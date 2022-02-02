@@ -3,27 +3,42 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(() => {
-  const tweetData = {
+
+// Fake data taken from initial-tweets.json
+const data = [
+  {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
     "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
     "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
   }
-  
-  const $tweet = createTweetElement(tweetData);
+]
 
-  $('.container').append($tweet);
+$(() => {
+  renderTweets(data);
 })
 
 const createTweetElement = (tweet) => {
   const user = tweet.user;
-  const markup = `
+  const timeAgo = timeago.format(tweet.created_at)
+
+  const $tweet = `
   <article class="tweet">
     <header>
       <image class="avatar" src=${user.avatars}></image>
@@ -34,7 +49,7 @@ const createTweetElement = (tweet) => {
       <p class="tweet-content-text">${tweet.content.text}</p>
     </div>
     <footer>
-      <div class="days-ago">${tweet.created_at}</div>
+      <div class="days-ago">${timeAgo}</div>
       <div class="icons">
         <span><i class="fas fa-flag"></i></span>
         <span><i class="fas fa-retweet"></i></span>
@@ -43,5 +58,12 @@ const createTweetElement = (tweet) => {
     </footer>
   </article>
   `;
-  return markup;
-}
+  return $tweet;
+};
+
+const renderTweets = (array) => {
+  array.forEach(tweet => {
+    const $tweet = createTweetElement(tweet);
+    $('.container').append($tweet);
+  });
+};
