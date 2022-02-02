@@ -21,7 +21,7 @@ const createTweetElement = (tweet) => {
       <div class="handle">${user.handle}</div>
     </header>
     <div class="tweet-content">
-      <p class="tweet-content-text">${tweet.content.text}</p>
+      <p class="tweet-content-text">${escape(tweet.content.text)}</p>
     </div>
     <footer>
       <div class="days-ago">${timeAgo}</div>
@@ -76,3 +76,10 @@ const loadTweets = () => {
 const validateEmpty = ($text) => $text.val() === '';
 
 const validateTooLong = ($text) => $text.val().length > 140;
+
+// escape XSS
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
