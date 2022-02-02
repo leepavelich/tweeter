@@ -16,14 +16,32 @@ $(() => {
     "created_at": 1461116232227
   }
   
-  // const createTweetElement = (tweet) => {
-  //   return $(`<article class="tweet">Hello world</article>`);
-  // }
-  
-  // const $tweet = createTweetElement(tweetData);
+  const $tweet = createTweetElement(tweetData);
 
-  const $tweet = $(`<article class="tweet">Hello world</article>`);
-  
-  console.log($tweet);
   $('.container').append($tweet);
 })
+
+const createTweetElement = (tweet) => {
+  const user = tweet.user;
+  const markup = `
+  <article class="tweet">
+    <header>
+      <image class="avatar" src=${user.avatars}></image>
+      <div class="name">${user.name}</div>
+      <div class="handle">${user.handle}</div>
+    </header>
+    <div class="tweet-content">
+      <p class="tweet-content-text">${tweet.content.text}</p>
+    </div>
+    <footer>
+      <div class="days-ago">${tweet.created_at}</div>
+      <div class="icons">
+        <span><i class="fas fa-flag"></i></span>
+        <span><i class="fas fa-retweet"></i></span>
+        <span><i class="fas fa-heart"></i></span>
+      </div>
+    </footer>
+  </article>
+  `;
+  return markup;
+}
