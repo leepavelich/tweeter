@@ -36,9 +36,12 @@ const createTweetElement = (tweet) => {
 };
 
 const renderTweets = (array) => {
+  const $tweetsContainer = $('.tweets-container');
+  $tweetsContainer.empty();
+
   array.forEach(tweet => {
     const $tweet = createTweetElement(tweet);
-    $('.tweets-container').prepend($tweet);
+    $tweetsContainer.prepend($tweet);
   });
 };
 
@@ -60,6 +63,7 @@ const tweetSubmission = () => {
     const serializedTweetData = $(this).serialize();
 
     $.post('/tweets', serializedTweetData);
+    loadTweets();
     $(this)[0].reset();
   });
 };
