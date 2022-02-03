@@ -49,6 +49,7 @@ body {
 
  .scroll-to-top {
   display: none;
+  position: relative;
   justify-content: center;
   align-items: center;
   width: 70px; 
@@ -63,6 +64,41 @@ body {
   right: 45px;
 }
 
-.scrollToTop:hover{
+.scroll-to-top .tooltiptext {
+  position: absolute;
+  visibility: hidden;
+  width: 140px;
+  background-color: #545149;
+  opacity: 0.7;
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  padding: 2px;
+  margin-right: 240px;
+}
+
+/* Speech bubble  */
+/* https://projects.verou.me/bubbly/ */
+.scroll-to-top .tooltiptext:after {
+  content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 14px solid transparent;
+	border-left-color: #545149;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -7px;
+	margin-right: -14px;
+}
+
+.scroll-to-top:hover{
   text-decoration:none;
+  background-color: orange;
+}
+
+.scroll-to-top:hover .tooltiptext{
+  visibility: visible;
 }
