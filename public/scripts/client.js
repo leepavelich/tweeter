@@ -100,10 +100,10 @@ const clearErrorMsg = () => {
 
 const newTweetIconClick = () => {
   const $nav = $('.new-tweet-nav');
-  const $new = $('.new-tweet');
+  const $new = $('#new-tweet-form');
 
   $nav.click(() => {
     $new.is(':visible') ? $new.slideUp('fast') : $new.slideDown('fast');
-    $new.focus();
+    $('#tweet-text').focus();
   });
 };
