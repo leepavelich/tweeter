@@ -99,8 +99,11 @@ const clearErrorMsg = () => {
 };
 
 const newTweetIconClick = () => {
-  const $newTweet = $('.new-tweet-nav');
-  $newTweet.click(() => {
-    $('#tweet-text').focus();
+  const $nav = $('.new-tweet-nav');
+  const $new = $('.new-tweet');
+
+  $nav.click(() => {
+    $new.is(':visible') ? $new.slideUp('fast') : $new.slideDown('fast');
+    $new.focus();
   });
 };
