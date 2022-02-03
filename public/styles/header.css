@@ -23,3 +23,15 @@
 .page-header h2 #last-name {
   font-weight: 300;
 }
+
+@media only screen and (min-width: 1024px) {
+  .page-header {
+    position: relative;
+    height: 500px;
+    width: 30%;
+    float: left;
+    justify-content: center;
+    margin-left: 5%;
+    margin-top: 8%;
+  }
+}

@@ -29,7 +29,6 @@ body {
    display: flex;
    height: 100%;
    width: 90%;
-   max-width: 1040px;
    margin: auto;
    background-color: #f4f1ec;
    z-index: 0;
@@ -37,6 +36,8 @@ body {
 
  .container {
   flex-direction: column;
+  max-width: 1040px;
+  min-width: 520px;
   padding-top: 500px;
   justify-content: flex-start;
   text-align: center;
@@ -109,4 +110,12 @@ body {
 
 .scroll-to-top:hover .tooltiptext{
   visibility: visible;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    width: 60%;
+    padding-top: 120px;
+  }
 }
