@@ -31,6 +31,8 @@ nav {
 }
 
 .new-tweet-icon {
+  background-color: transparent;
+  border: none;
   color: red;
   animation-name: bounce;
   animation-duration: 1s;
@@ -39,8 +41,12 @@ nav {
   animation-iteration-count: infinite;
 }
 
+.new-tweet-icon:hover {
+  cursor: pointer;
+}
+
 @keyframes bounce {
   0% {transform: translateY(0); color: red}
-  50% {transform: translateY(-10px); color: orangered}
+  50% {transform: translateY(-0.5em); color: orangered}
   100% {transform: translateY(0); color: darkorange}
 }
