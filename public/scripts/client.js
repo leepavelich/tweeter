@@ -111,7 +111,7 @@ const scrollToTopButton = () => {
   const $scrollToTop = $('.scroll-to-top');
 
   $(window).scroll(function() {
-        if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 200) {
       $scrollToTop.fadeIn();
       $scrollToTop.css('display', 'flex');
     } else {
