@@ -99,6 +99,15 @@ body {
   background-color: orange;
 }
 
+.scroll-to-top:active {
+  transform: scale(.8);
+}
+
+.scroll-to-top:active .tooltiptext{
+  transform: scale(1.25);
+  margin-right: 300px;
+}
+
 .scroll-to-top:hover .tooltiptext{
   visibility: visible;
 }
