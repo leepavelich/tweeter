@@ -21,7 +21,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -30,9 +29,9 @@ body {
    display: flex;
    height: 100%;
    width: 90%;
-   margin-left: 5%;
+   max-width: 1040px;
+   margin: auto;
    background-color: #f4f1ec;
-   position: absolute;
    z-index: 0;
  }
 
