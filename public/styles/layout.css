@@ -46,3 +46,23 @@ body {
  section + article.tweet {
    margin-top: 2em;
  }
+
+ .scroll-to-top {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 70px; 
+  height: 70px;
+  border-radius: 50%;
+  background: red;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  position:fixed;
+  bottom: 60px;
+  right: 45px;
+}
+
+.scrollToTop:hover{
+  text-decoration:none;
+}

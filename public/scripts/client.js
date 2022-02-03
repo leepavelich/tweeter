@@ -7,6 +7,7 @@ $(() => {
   loadTweets();
   newTweetIconClick();
   tweetSubmission();
+  scrollToTopButton();
 });
 
 const createTweetElement = (tweet) => {
@@ -105,3 +106,16 @@ const newTweetIconClick = () => {
     $('#tweet-text').focus();
   });
 };
+
+const scrollToTopButton = function() {
+  $(window).scroll(function() {
+    const $scrollToTop = $('.scroll-to-top');
+
+    if ($(this).scrollTop() > 200) {
+      $scrollToTop.fadeIn();
+      $scrollToTop.css('display', 'flex');
+    } else {
+      $scrollToTop.fadeOut();
+    }
+  });
+}
