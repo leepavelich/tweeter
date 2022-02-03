@@ -70,8 +70,16 @@ article.tweet footer .icons span {
   width: 2em;
 }
 
-article.tweet footer .icons span:hover {
-  color: #c3c360;
+article.tweet footer .icons #flag:hover {
+  color: coral;
+}
+
+article.tweet footer .icons #retweet:hover {
+  color: aquamarine;
+}
+
+article.tweet footer .icons #like:hover {
+  color: palevioletred;
 }
 
 article.tweet + article.tweet {

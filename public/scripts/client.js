@@ -28,9 +28,9 @@ const createTweetElement = (tweet) => {
     <footer>
       <div class="days-ago">${timeAgo}</div>
       <div class="icons">
-        <span><i class="fas fa-flag"></i></span>
-        <span><i class="fas fa-retweet"></i></span>
-        <span><i class="fas fa-heart"></i></span>
+        <span><i class="fas fa-flag" id="flag"></i></span>
+        <span><i class="fas fa-retweet" id="retweet"></i></span>
+        <span><i class="fas fa-heart" id="like"></i></span>
       </div>
     </footer>
   </article>
