@@ -107,15 +107,20 @@ const newTweetIconClick = () => {
   });
 };
 
-const scrollToTopButton = function() {
-  $(window).scroll(function() {
-    const $scrollToTop = $('.scroll-to-top');
+const scrollToTopButton = () => {
+  const $scrollToTop = $('.scroll-to-top');
 
-    if ($(this).scrollTop() > 200) {
+  $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
       $scrollToTop.fadeIn();
       $scrollToTop.css('display', 'flex');
     } else {
       $scrollToTop.fadeOut();
     }
+  });
+
+  $scrollToTop.click(() => {
+    const $new = $('#new-tweet-form');
+    $new.slideDown('fast');
   });
 }
