@@ -30,6 +30,10 @@ nav {
   align-items: center;
 }
 
+.new-tweet-nav:hover {
+  cursor: pointer;
+}
+
 .new-tweet-icon {
   background-color: transparent;
   border: none;
@@ -39,10 +43,6 @@ nav {
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-}
-
-.new-tweet-icon:hover {
-  cursor: pointer;
 }
 
 @keyframes bounce {

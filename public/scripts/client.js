@@ -5,6 +5,7 @@
 
 $(() => {
   loadTweets();
+  newTweetIconClick();
   tweetSubmission();
 });
 
@@ -91,8 +92,15 @@ const errorMsg = (msg) => {
   $errorMsg.hide()
     .html(msg)
     .slideDown('fast');
-}
+};
 
 const clearErrorMsg = () => {
   $(".validation-error-msg").slideUp('fast');
-}
+};
+
+const newTweetIconClick = () => {
+  const $newTweet = $('.new-tweet-nav');
+  $newTweet.click(() => {
+    $('#tweet-text').focus();
+  });
+};
