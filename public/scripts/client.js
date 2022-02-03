@@ -4,16 +4,15 @@
  */
 
 $(() => {
-  loadTweets();
-  newTweetIconClick();
-  tweetSubmission();
-  scrollToTopButton();
+  loadTweets(); // initial page load
+  newTweetIconClick();  // top-right compose button
+  tweetSubmission();  // compose tweet box
+  scrollToTopButton();  // bottom-right scroll-to-top button
 });
 
 const createTweetElement = (tweet) => {
   const user = tweet.user;
   const timeAgo = timeago.format(tweet.created_at);
-
 
   const $tweet = `
   <article class="tweet">
@@ -38,6 +37,13 @@ const createTweetElement = (tweet) => {
   return $tweet;
 };
 
+// escape XSS
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = (array) => {
   const $tweetsContainer = $('.tweets-container');
   $tweetsContainer.empty();
@@ -50,6 +56,7 @@ const renderTweets = (array) => {
 
 const tweetSubmission = () => {
   const $form = $('#new-tweet-form');
+
   $form.submit(function(event) {
     event.preventDefault();
     const $text = $('#tweet-text');
@@ -59,7 +66,6 @@ const tweetSubmission = () => {
       errorMsg('<span>&#9888;</span> Please enter a tweet before submitting');
       return;
     }
-
     if (validateTooLong($text)) {
       errorMsg('<span>&#9888;</span> Tweets can only be 140 characters or less');
       return;
@@ -68,7 +74,7 @@ const tweetSubmission = () => {
     const serializedTweetData = $(this).serialize();
 
     $.post('/tweets', serializedTweetData, () => loadTweets());
-    $(this)[0].reset();
+    $(this)[0].reset(); // clears the compose tweet textarea
   });
 };
 
@@ -77,15 +83,7 @@ const loadTweets = () => {
 };
 
 const validateEmpty = ($text) => $text.val() === '';
-
 const validateTooLong = ($text) => $text.val().length > 140;
-
-// escape XSS
-const escape = function(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
 
 const errorMsg = (msg) => {
   const $errorMsg = $(".validation-error-msg");
@@ -121,4 +119,4 @@ const scrollToTopButton = () => {
     $new.slideDown('fast');
     $('#tweet-text').focus();
   });
-}
+};

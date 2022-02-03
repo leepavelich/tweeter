@@ -32,8 +32,9 @@
   </head>
 
   <body>
-      <!-- Top nav bar (fixed) -->
-      <nav>
+
+    <!-- Top nav bar (fixed) -->
+    <nav>
       <div class="logo">tweeter</div>
       <div class="new-tweet-nav">
         <div class="new-tweet-text">
@@ -44,6 +45,7 @@
         </div>
       </div>
     </nav>
+
     <!--- Header --->
     <header class="page-header">
       <div>
@@ -53,12 +55,11 @@
           <h2><span id="first-name">Tweets</span> <span id="last-name">McGee</span></h2>
       </div>
     </header>
-
    
-    <!-- Page-specific (main) content here -->
+    <!-- Page-specific (main) content -->
     <main class="container">
+
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <form id="new-tweet-form" action='/tweets' method='POST'>
           <div>
             <textarea name="text" id="tweet-text" placeholder="Send your thoughts into the universe"></textarea>
@@ -70,12 +71,15 @@
           <div class="validation-error-msg"></div>
         </form>
       </section>
+
       <section class="tweets-container"></section>
 
       <a href="#" class="scroll-to-top">
         <div class="tooltiptext">Return to top of page</div>
         <span><i class="fas fa-angle-double-up"></i></span>
       </a>
+
     </main>
+
   </body>
 </html>
