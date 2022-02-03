@@ -57,12 +57,12 @@ const tweetSubmission = () => {
     if (validateEmpty($text)) {
       errorMsg('<span>&#9888;</span> Please enter a tweet before submitting');
       return;
-    };
+    }
 
     if (validateTooLong($text)) {
       errorMsg('<span>&#9888;</span> Tweets can only be 140 characters or less');
       return;
-    };
+    }
 
     const serializedTweetData = $(this).serialize();
 
@@ -80,7 +80,7 @@ const validateEmpty = ($text) => $text.val() === '';
 const validateTooLong = ($text) => $text.val().length > 140;
 
 // escape XSS
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -89,9 +89,7 @@ const escape = function (str) {
 const errorMsg = (msg) => {
   const $errorMsg = $(".validation-error-msg");
 
-  $errorMsg.hide()
-    .html(msg)
-    .slideDown('fast');
+  $errorMsg.hide().html(msg).slideDown('fast');
 };
 
 const clearErrorMsg = () => {
