@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  $('#tweet-text').keyup(function() {
+$(() => {
+  $('#tweet-text').input(function() {
     const max = 140;
     let count = $(this).val().length;
 
