@@ -23,7 +23,7 @@ textarea {
 
 .new-tweet-footer {
   display: flex;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   margin-top: 0.25em;
   flex-direction: row;
   justify-content: space-between;
@@ -37,7 +37,7 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #d09e41;
+  background-color: #d09e41
 }
 
 .btn:active {
@@ -46,7 +46,7 @@ textarea {
 
 .validation-error-msg {
   display: none;
-  color: red;
+  color:red;
   text-align: left;
   margin-top: 0.5em;
 }

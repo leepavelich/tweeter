@@ -1,53 +1,54 @@
+@import "variables";
+
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $body-color;
+  background-color: $base-color;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-main {
-  display: flex;
-  height: 100%;
-  width: 90%;
-  margin: auto;
-  background-color: #f4f1ec;
-  z-index: 0;
-}
+ main {
+   display: flex;
+   height: 100%;
+   width: 90%;
+   margin: auto;
+   background-color: $base-color;
+   z-index: 0;
+ }
 
-.container {
+ .container {
   flex-direction: column;
   max-width: 1040px;
   min-width: 520px;
   padding-top: 500px;
   justify-content: flex-start;
   text-align: center;
-}
+ }
 
-section + article.tweet {
-  margin-top: 2em;
-}
+ section + article.tweet {
+   margin-top: 2em;
+ }
 
-.scroll-to-top {
+ .scroll-to-top {
   display: none;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 70px;
+  width: 70px; 
   height: 70px;
   border-radius: 50%;
   background: red;
   font-weight: bold;
   color: white;
   text-decoration: none;
-  position: fixed;
+  position:fixed;
   bottom: 60px;
   right: 45px;
 }
@@ -56,7 +57,7 @@ section + article.tweet {
   position: absolute;
   visibility: hidden;
   width: 140px;
-  background-color: #545149;
+  background-color: $body-color;
   opacity: 0.7;
   color: white;
   text-align: center;
@@ -68,35 +69,35 @@ section + article.tweet {
 /* Speech bubble  */
 /* https://projects.verou.me/bubbly/ */
 .scroll-to-top .tooltiptext:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 14px solid transparent;
-  border-left-color: #545149;
-  border-right: 0;
-  border-top: 0;
-  margin-top: -7px;
-  margin-right: -14px;
+  content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 14px solid transparent;
+	border-left-color: $body-color;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -7px;
+	margin-right: -14px;
 }
 
-.scroll-to-top:hover {
-  text-decoration: none;
+.scroll-to-top:hover{
+  text-decoration:none;
   background-color: orange;
 }
 
 .scroll-to-top:active {
-  transform: scale(0.8);
+  transform: scale(.8);
 }
 
-.scroll-to-top:active .tooltiptext {
+.scroll-to-top:active .tooltiptext{
   transform: scale(1.25);
   margin-right: 300px;
 }
 
-.scroll-to-top:hover .tooltiptext {
+.scroll-to-top:hover .tooltiptext{
   visibility: visible;
 }
 

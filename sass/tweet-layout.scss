@@ -1,5 +1,7 @@
+@import "variables";
+
 article.tweet {
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   padding: 0.7em;
@@ -37,7 +39,7 @@ article.tweet header .handle {
 }
 
 article.tweet .tweet-content {
-  border-bottom: 5px solid #545149;
+  border-bottom: 5px solid $body-color;
   margin-top: 0.5em;
   margin-bottom: 1em;
 }

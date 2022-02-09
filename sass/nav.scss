@@ -1,3 +1,4 @@
+
 nav {
   display: flex;
   height: 120px;
@@ -15,7 +16,7 @@ nav {
 }
 
 .logo {
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   font-size: 42px;
   padding-bottom: 0.5em;
   justify-content: space-around;
@@ -45,16 +46,7 @@ nav {
 }
 
 @keyframes bounce {
-  0% {
-    transform: translateY(0);
-    color: red;
-  }
-  50% {
-    transform: translateY(-0.5em);
-    color: orangered;
-  }
-  100% {
-    transform: translateY(0);
-    color: darkorange;
-  }
+  0% {transform: translateY(0); color: red}
+  50% {transform: translateY(-0.5em); color: orangered}
+  100% {transform: translateY(0); color: darkorange}
 }
