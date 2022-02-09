@@ -1,5 +1,5 @@
 $(() => {
-  $('#tweet-text').input(function() {
+  $('#tweet-text').keypress(function() {
     const max = 140;
     let count = $(this).val().length;
 
